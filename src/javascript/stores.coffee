@@ -1,0 +1,3 @@
+stores = {}
+
+module.exports = stores
