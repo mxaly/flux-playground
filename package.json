@@ -1,0 +1,70 @@
+{
+  "name": "gulp-starter-react-cjsx",
+  "version": "0.1.0",
+  "description": "Gulp starter with common tasks and scenarios for ReactJS with cjsx (coffee + jsx support)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piotrpalek/gulp-starter"
+  },
+  "browser": {
+    "underscore": "backbone/node_modules/underscore"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "cjsxify",
+      "hbsfy"
+    ],
+    "debug": true
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "underscore": "_"
+  },
+  "devDependencies": {
+    "browserify-shim": "~3.4.1",
+    "browserify": "~3.36.0",
+    "cjsxify": "^0.2.3",
+    "connect": "~2.14.3",
+    "gulp-compass": "~1.1.9",
+    "gulp-minify-css": "0.3.6",
+    "gulp-sass": "^0.7.1",
+    "gulp-changed": "~0.3.0",
+    "gulp-imagemin": "~0.1.5",
+    "gulp-livereload": "~1.2.0",
+    "gulp-notify": "~1.2.4",
+    "gulp-open": "~0.2.8",
+    "gulp": "~3.6.0",
+    "hbsfy": "~1.3.2",
+    "vinyl-source-stream": "~0.1.1",
+    "jest-cli": "^0.1.13",
+    "coffee-react": "^0.1.0"
+  },
+  "dependencies": {
+    "coffee-react": "*",
+    "fluxxor": "^1.3.1",
+    "backbone": "latest",
+    "faker-js": "*",
+    "react": "^0.11.0",
+    "react-addons": "*",
+    "superagent-promise": "*",
+    "underscore": "^1.6.0",
+    "zepto-browserify": "*",
+    "fuse.js": "*"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "testDirectoryName": "specs",
+    "testFileExtensions": [
+      "coffee",
+      "js",
+      "cjsx"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  }
+}
