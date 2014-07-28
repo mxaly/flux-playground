@@ -47,9 +47,10 @@ TodosStore = Fluxxor.createStore
     @todos.push payload.todo
     @emit 'change'
 
-  onRemoveTodo: (todo) ->
-    whereIsThatBitch = _.indexOf @todos, todo
-    @todos.splice(whereIsThatBitch, whereIsThatBitch+1)
+  onRemoveTodo: (payload) ->
+    whereIsThatBitch = _.indexOf @todos, payload.todo
+    @todos.splice(whereIsThatBitch, 1)
+    @emit('change')
 
   onLoadTodos: ->
     @todos = _([0..25]).map (i) ->
